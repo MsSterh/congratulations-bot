@@ -5,7 +5,8 @@ let bot;
 
 const admin = require('firebase-admin');
 
-let serviceAccount = require('./serviceAccountKey.json');
+const serviceAccount = JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS);
+
 
 if (!admin.apps.length) {
   admin.initializeApp({
